@@ -29,12 +29,12 @@ jobs:
 
     - name: Build armv7hl
       id: build_armv7hl
-      uses: attah/buildfish@0.6
+      # uses: attah/buildfish@0.6
       with:
         release: latest
-      # run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -c "
-      #       mkdir -p build ;
-      #       cd build ;
-      #       cp -r /share/* . ;
-      #       mb2 -t SailfishOS-$RELEASE-armv7hl build ;
-      #       sudo cp -r RPMS/*.rpm /share/output"
+        run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -c "
+              mkdir -p build ;
+              cd build ;
+              cp -r /share/* . ;
+              mb2 -t SailfishOS-$RELEASE-armv7hl build ;
+              sudo cp -r RPMS/*.rpm /share/output"
