@@ -21,6 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: update submodules
+      run: git submodule sync --recursive && git submodule update --init --force --recursive --depth=1
+
     - name: Prepare
       run: mkdir output
 
