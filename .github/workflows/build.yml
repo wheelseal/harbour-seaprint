@@ -1,5 +1,5 @@
 
-name: Screencast build
+name: Buildfish build
 
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
 
     - name: Build armv7hl
       id: build_armv7hl
-      uses: attah/buildfish@0.1
+      uses: attah/buildfish@0.2
       with:
         release: latest
       # run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -c "
