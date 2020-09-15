@@ -1,4 +1,3 @@
-
 name: Buildfish build
 
 on:
@@ -21,18 +20,11 @@ jobs:
     - name: update submodules
       run: git submodule sync --recursive && git submodule update --init --force --recursive --depth=1
 
-    - name: Prepare
-      run: mkdir output
-
     - name: Build armv7hl
       id: build_armv7hl
-      uses: attah/buildfish@0.8
+      uses: attah/buildfish@0.9
       with:
         release: 3.3.0.14
 
-      # run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -c "
-      #      mkdir -p build ;
-      #      cd build ;
-      #      cp -r /share/* . ;
-      #      mb2 -t SailfishOS-$RELEASE-armv7hl build ;
-      #      sudo cp -r RPMS/*.rpm /share/output"
+    - name: Post
+      run: ls RPMS
