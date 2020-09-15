@@ -29,7 +29,7 @@ jobs:
 
     - name: Build armv7hl
       id: build_armv7hl
-      uses: attah/buildfish@0.6
+      uses: attah/buildfish@0.7
       with:
         release: latest
 
