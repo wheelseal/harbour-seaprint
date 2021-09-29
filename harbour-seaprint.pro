@@ -50,6 +50,7 @@ SOURCES += src/harbour-seaprint.cpp \
     src/svgprovider.cpp
 
 DISTFILES += qml/harbour-seaprint.qml \
+    harbour-seaprint.profile \
     qml/components/DependentOn.qml \
     qml/cover/CoverPage.qml \
     qml/components/*qml \
@@ -62,6 +63,11 @@ DISTFILES += qml/harbour-seaprint.qml \
     rpm/harbour-seaprint.spec \
     translations/*.ts \
     harbour-seaprint.desktop
+
+sailjail.path = /etc/sailjail/permissions/
+sailjail.files = harbour-seaprint.profile
+
+INSTALLS += sailjail
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
